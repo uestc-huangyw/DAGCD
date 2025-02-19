@@ -1,8 +1,8 @@
-# Dynamic Attention-Guided Context Decoding for Mitigating Context Faithfulness Hallucinations in Large Language Models
+# Code will coming soon
 
 The official code for the paper "[Dynamic Attention-Guided Context Decoding for Mitigating Context Faithfulness Hallucinations in Large Language Models](https://arxiv.org/abs/2501.01059)".
 
-<img src="assets/figure.svg">
+<img src="assets/figure.png">
 
 
 
@@ -97,6 +97,6 @@ python 2_DAGCD --model llama-2-7b-hf --data HotpotQA --rank 10 --gpu 0
 # Citation
 
 ```
-comming soon
+
 ```
 
