@@ -23,8 +23,10 @@ cd DAGCD/src
 ```sh
 # step 1: create a virtual environment
 conda create -n dagcd python=3.9
+
 # step 2: activate the virtual environment
 conda activate dagcd
+
 # step 3: install dependencies from requirements.txt
 pip install -r requirements.txt
 ```
@@ -33,7 +35,7 @@ pip install -r requirements.txt
 
 ## Step 0: Download Data
 
-We download QA datasets from [MrQA](https://huggingface.co/datasets/mrqa-workshop/mrqa) and [NQ-Swap](https://huggingface.co/datasets/pminervini/NQ-Swap), and we use MrQA train set for training Context Utilization Detector and validation set for evaluation. And we download summary dataset from [CNN_DM](https://huggingface.co/datasets/abisee/cnn_dailymail).
+We download QA datasets from [MrQA](https://huggingface.co/datasets/mrqa-workshop/mrqa) and [NQ-Swap](https://huggingface.co/datasets/pminervini/NQ-Swap), and we use MrQA train set for training Context Utilization Detector and validation set for evaluation. We also download the summary dataset from [CNN_DM](https://huggingface.co/datasets/abisee/cnn_dailymail).
 
 ```sh
 python 0_pre_data.py --save_dir ../datasets/original_data/
@@ -59,10 +61,10 @@ python 1_train_detector.py --model {huggingface_id} --hf_token {hf_token} --gpu 
 
 ```sh
 python 1_train_detector.py --model meta-llama/Llama-2-7b-hf --gpu 0  # single device
-python 1_train_detector.py --model meta-llama/Llama-2-7b-hf --gpu 0,1  # multi devices
+python 1_train_detector.py --model meta-llama/Llama-2-7b-hf --gpu 0,1  # multiple devices
 
-# LLM model will saved in ../models/llama-2-7b-hf (the model filename is the lowercase basename of the huggingface_id).
-# Context Utilization Detector will saved in ./dector/
+# LLM model will be saved in ../models/llama-2-7b-hf (the model filename is the lowercase basename of the huggingface_id).
+# Context Utilization Detector will be saved in ./dector/
 ```
 
 ---
@@ -71,7 +73,7 @@ python 1_train_detector.py --model meta-llama/Llama-2-7b-hf --gpu 0,1  # multi d
 
 ## Step 2: Apply DAGCD during Inference-Time
 
-Applying Dynamic Attention-Guided Context Decoding during inference-time.
+Apply Dynamic Attention-Guided Context Decoding during inference-time.
 
 ```shell
 python 2_DAGCD.py --model {model_name} --data {dataset_name} --rank {top-rank} --gpu {device_id}
@@ -88,7 +90,7 @@ python 2_DAGCD.py --model {model_name} --data {dataset_name} --rank {top-rank} -
 ```sh
 python 2_DAGCD --model llama-2-7b-hf --data HotpotQA --rank 10 --gpu 0
 
-# the results will saved in ../results/llama-2-7b-hf/
+# the results will be saved in ../results/llama-2-7b-hf/
 ```
 
 ---
