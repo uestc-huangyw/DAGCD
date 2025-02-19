@@ -1,4 +1,5 @@
-# Code will coming soon
+# The code will be coming soon
+
 
 The official code for the paper "[Dynamic Attention-Guided Context Decoding for Mitigating Context Faithfulness Hallucinations in Large Language Models](https://arxiv.org/abs/2501.01059)".
 
