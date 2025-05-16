@@ -83,8 +83,6 @@ thinc==8.3.3
 threadpoolctl==3.5.0
 tokenizers==0.20.3
 torch==2.4.1
-torchaudio==2.4.1
-torchvision==0.19.1
 tqdm==4.67.1
 transformers==4.45.2
 triton==3.0.0
