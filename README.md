@@ -1,12 +1,27 @@
-# Dynamic Attention-Guided Context Decoding for Mitigating Context Faithfulness Hallucinations in Large Language Models
+<p align="center">
+<h1 align="center">Dynamic Attention-Guided Context Decoding for Mitigating Context Faithfulness Hallucinations in Large Language Models
+
+<p align="center">
+    <a href="https://arxiv.org/abs/2501.01059"><img alt="Paper" src="https://img.shields.io/badge/📄-Paper-orange"></a>
+    <a href="https://github.com/uestc-huangyw/DAGCD/blob/master/LICENSE"><img alt="GitHub license" src="https://img.shields.io/github/license/uestc-huangyw/DAGCD"></a>
+
+</p>
 
 ## 🔍Overview
 
-The official code for the paper 📃:
+**DAGCD** (Dynamic Attention-Guided Context Decoding) is a lightweight and interpretable framework designed to mitigate **context faithfulness hallucinations** in Large Language Models (LLMs) — **without finetuning the LLM**.
 
-<p align="center">
-<a href="https://arxiv.org/abs/2501.01059">《Dynamic Attention-Guided Context Decoding for Mitigating Context Faithfulness Hallucinations in Large Language Models》</a>
+- Single-pass decoding with no post-hoc correction  
+- Attention-driven interpretability through lightweight, head-specific signals  
+- Improves context faithfulness and robustness across open-book QA tasks  
+- Compatible with various LLMs, including LLaMA and Mistral families  
+
+
+
 <img src="assets/model.png">
+
+
+
 
 
 
