@@ -22,7 +22,7 @@
 
 
 
-
+---
 
 
 
@@ -30,6 +30,7 @@
 
 <img src="assets/results.png">
 
+---
 
 
 ## 🎯Quick Start
@@ -68,7 +69,7 @@ python 0_pre_data.py
 # data will be saved in ../datasets/
 ```
 
----
+
 
 
 
@@ -97,7 +98,7 @@ python 1_train_detector.py --model meta-llama/Llama-2-7b-hf
 # Context Utilization Detector will be saved in ../dector/
 ```
 
----
+
 
 
 
@@ -128,6 +129,7 @@ python 2_DAGCD.py --model llama-2-7b-hf --data HotpotQA --rank 10
 # the results will be saved in ../results/llama-2-7b-hf/
 ```
 
+
 ---
 
 
@@ -144,6 +146,8 @@ If you find the repository or paper helpful, please cite our work:
   year={2025}
 }
 ```
+
+---
 
 ## ⭐ Star History
 
