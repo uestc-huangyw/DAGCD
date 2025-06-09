@@ -144,3 +144,7 @@ If you find the repository or paper helpful, please cite our work:
   year={2025}
 }
 ```
+
+## ⭐ Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=uestc-huangyw/DAGCD&type=Date)](https://star-history.com/#uestc-huangyw/DAGCD&Date)
