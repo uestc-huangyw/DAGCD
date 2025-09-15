@@ -2,7 +2,7 @@
 <h1 align="center">Dynamic Attention-Guided Context Decoding for Mitigating Context Faithfulness Hallucinations in Large Language Models
 
 <p align="center">
-    <a href="https://arxiv.org/abs/2501.01059"><img alt="Paper" src="https://img.shields.io/badge/📄-Paper-orange"></a>
+    <a href="https://aclanthology.org/2025.findings-acl.269/"><img alt="Paper" src="https://img.shields.io/badge/📄-Paper-orange"></a>
     <a href="https://github.com/uestc-huangyw/DAGCD/blob/master/LICENSE"><img alt="GitHub license" src="https://img.shields.io/github/license/uestc-huangyw/DAGCD"></a>
 
 </p>
@@ -139,11 +139,18 @@ python 2_DAGCD.py --model llama-2-7b-hf --data HotpotQA --rank 10
 If you find the repository or paper helpful, please cite our work:
 
 ```bibtex
-@article{huang2025dynamic,
-  title={Dynamic Attention-Guided Context Decoding for Mitigating Context Faithfulness Hallucinations in Large Language Models},
-  author={Huang, Yanwen and Zhang, Yong and Cheng, Ning and Li, Zhitao and Wang, Shaojun and Xiao, Jing},
-  journal={arXiv preprint arXiv:2501.01059},
-  year={2025}
+@inproceedings{huangyw-etal-2025-dynamic,
+    title = "Dynamic Attention-Guided Context Decoding for Mitigating Context Faithfulness Hallucinations in Large Language Models",
+    author = "Huang, Yanwen  and
+      Zhang, Yong  and
+      Cheng, Ning  and
+      Li, Zhitao  and
+      Wang, Shaojun  and
+      Xiao, Jing",
+    month = jul,
+    year = "2025",
+    address = "Vienna, Austria",
+    publisher = "Association for Computational Linguistics",
 }
 ```
 
