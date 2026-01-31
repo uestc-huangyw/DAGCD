@@ -63,5 +63,5 @@ def download_summary_data(save_dir: str):
 
 if __name__ == '__main__':
     download_qa_data(save_dir='../datasets/')
-    download_summary_data(save_dir=args.save_dir)
+    download_summary_data(save_dir='../datasets/')
 
