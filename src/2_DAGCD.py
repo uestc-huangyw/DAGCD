@@ -11,7 +11,7 @@ from datetime import datetime
 from argparse import ArgumentParser
 import utils
 import os
-
+import math
 
 def set_logger(args):
     current_time = datetime.now()
@@ -273,12 +273,11 @@ class Model:
         return utilization_distribution.unsqueeze(0)
 
 
-    def normalized_entropy(self, dist):
+    def normalized_entropy(self, dist, eps=1e-12):
         ''' return normalized entropy of distribution <dist> '''
-        entropy = -torch.sum(dist * torch.log(dist))
-        max_entropy = torch.log(torch.tensor(self.vocab_size, dtype=torch.float32))
-        normalized_entropy = entropy / max_entropy
-        return normalized_entropy.item()
+        dist = dist.float().clamp_min(eps)
+        entropy = -(dist * dist.log()).sum(dim=-1)
+        return (entropy / math.log(self.vocab_size)).item()
 
 
     def generate(self,question: str, context: str, gen_max_length: int = 10, use_dagcd=True):
@@ -315,7 +314,7 @@ class Model:
             for cur_len in range(gen_max_length):
                 outputs = self.model(input_ids=input_ids, attention_mask=attention_mask, output_attentions=True, return_dict=True, use_cache=True)
                 next_token_logits = outputs.logits[:, -1, :]
-                token_level_probability_distribution = F.softmax(next_token_logits, dim=-1)
+                token_level_probability_distribution = F.softmax(next_token_logits.float(), dim=-1)
                 next_token = torch.argmax(token_level_probability_distribution, dim=-1)
 
                 ##################################  DAGCD  #######################################
